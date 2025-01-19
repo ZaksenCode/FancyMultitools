@@ -1,0 +1,17 @@
+{
+  "_#items": "~~~~~~~~~~ ITEMS ~~~~~~~~~",
+
+  "item.fancy_multitools.multitool": "Multitool",
+  "item.fancy_multitools.multitool_head_part": "Multitool head part",
+
+  "tag.item.fancy_multitools.multitool_part": "Multitool parts",
+  "tag.item.fancy_multitools.multitool_material": "Multitool materials",
+
+  "_#blocks": "~~~~~~~~~~ BLOCKS ~~~~~~~~~",
+
+  "block.fancy_multitools.tool_creation_station": "Tool creation station",
+
+  "_#screens": "~~~~~~~~~~ SCREENS ~~~~~~~~~",
+
+  "screen.fancy_multitools.tool_creation_station": "Tool creation station"
+}

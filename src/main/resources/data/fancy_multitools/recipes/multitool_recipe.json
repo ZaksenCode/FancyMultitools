@@ -1,0 +1,17 @@
+{
+  "type": "fancy_multitools:multitool_recipe",
+  "ingredients": [
+    {
+      "tag": "fancy_multitools:multitool_part"
+    },
+    {
+      "tag": "fancy_multitools:multitool_part"
+    },
+    {
+      "tag": "fancy_multitools:multitool_part"
+    }
+  ],
+  "result": {
+    "item": "fancy_multitools:multitool"
+  }
+}

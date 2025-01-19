@@ -1,0 +1,4 @@
+accessWidener v2 named
+
+accessible class net/minecraft/registry/Registries$Initializer
+accessible method net/minecraft/registry/Registries createIntrusive (Lnet/minecraft/registry/RegistryKey;Ljava/lang/String;Lnet/minecraft/registry/Registries$Initializer;)Lnet/minecraft/registry/DefaultedRegistry;

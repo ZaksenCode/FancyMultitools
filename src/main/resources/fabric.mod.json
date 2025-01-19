@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "fancy_multitools",
+  "version": "${version}",
+  "name": "Fancy Multitools",
+  "description": "Adds some weird and fancy multitools",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/fancy_multitools/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.zaksen.fancymultitools.client.FancyMultitoolsClient"
+    ],
+    "main": [
+      "me.zaksen.fancymultitools.FancyMultitools"
+    ]
+  },
+  "mixins": [
+    "fancy_multitools.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "accessWidener" : "fancy_multitools.accesswidener"
+}

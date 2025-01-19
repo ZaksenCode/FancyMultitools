@@ -1,0 +1,17 @@
+{
+  "_#items": "~~~~~~~~~~ ITEMS ~~~~~~~~~",
+
+  "item.fancy_multitools.multitool": "Мульти-инструмент",
+  "item.fancy_multitools.multitool_head_part": "Головка мульти-инструмента",
+
+  "tag.item.fancy_multitools.multitool_part": "Части мульти-инструментов",
+  "tag.item.fancy_multitools.multitool_material": "Материалы для мульти-инструментов",
+
+  "_#blocks": "~~~~~~~~~~ BLOCKS ~~~~~~~~~",
+
+  "block.fancy_multitools.tool_creation_station": "Станция создания инструментов",
+
+  "_#screens": "~~~~~~~~~~ SCREENS ~~~~~~~~~",
+
+  "screen.fancy_multitools.tool_creation_station": "Станция создания инструментов"
+}
