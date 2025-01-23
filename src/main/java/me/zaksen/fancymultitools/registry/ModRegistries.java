@@ -6,8 +6,8 @@ import net.minecraft.registry.*;
 
 public class ModRegistries {
     public static final DefaultedRegistry<BasicMaterial> MATERIAL = Registries.createIntrusive(
-            ModRegistryKeys.MATERIAL_KEY,
-            "air",
+            ModRegistryKeys.MATERIAL,
+            "fancy_multitools:air",
             registry -> ModMaterials.AIR
     );
 }

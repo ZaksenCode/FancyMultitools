@@ -2,13 +2,19 @@
   "type": "fancy_multitools:multitool_recipe",
   "ingredients": [
     {
-      "tag": "fancy_multitools:multitool_part"
+      "tag": "fancy_multitools:multitool_material"
     },
     {
-      "tag": "fancy_multitools:multitool_part"
+      "tag": "fancy_multitools:multitool_material"
     },
     {
-      "tag": "fancy_multitools:multitool_part"
+      "tag": "fancy_multitools:multitool_material"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:stick"
     }
   ],
   "result": {

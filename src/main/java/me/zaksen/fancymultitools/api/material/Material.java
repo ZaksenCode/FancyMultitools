@@ -1,23 +1,31 @@
 package me.zaksen.fancymultitools.api.material;
 
 import me.zaksen.fancymultitools.registry.ModRegistries;
-import net.minecraft.item.Item;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.text.Text;
 
 public class Material implements BasicMaterial {
-    private final RegistryEntry.Reference<BasicMaterial> registryEntry;
-    private final Item materialItem;
+    public final RegistryEntry.Reference<BasicMaterial> registryEntry;
+    private final Text displayName;
+    private final Ingredient materialIngredient;
     private final int durability;
 
-    public Material(Item item, int durability) {
+    public Material(Text displayName, Ingredient ingredient, int durability) {
         this.registryEntry = ModRegistries.MATERIAL.createEntry(this);
-        this.materialItem = item;
+        this.displayName = displayName;
+        this.materialIngredient = ingredient;
         this.durability = durability;
     }
 
     @Override
-    public Item getMaterialItem() {
-        return materialItem;
+    public Text getDisplayName() {
+        return displayName;
+    }
+
+    @Override
+    public Ingredient getMaterialIngredient() {
+        return materialIngredient;
     }
 
     @Override

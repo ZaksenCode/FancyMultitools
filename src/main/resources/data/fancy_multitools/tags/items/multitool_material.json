@@ -1,8 +1,6 @@
 {
   "values": [
     "#minecraft:planks",
-    "minecraft:gold_ingot",
-    "minecraft:iron_ingot",
-    "minecraft:diamond"
+    "#fancy_multitools:stone_material"
   ]
 }

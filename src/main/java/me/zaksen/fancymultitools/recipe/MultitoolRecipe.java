@@ -2,8 +2,13 @@ package me.zaksen.fancymultitools.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import me.zaksen.fancymultitools.api.material.BasicMaterial;
+import me.zaksen.fancymultitools.item.tool.custom.Multitool;
+import me.zaksen.fancymultitools.material.ModMaterials;
+import me.zaksen.fancymultitools.registry.ModRegistries;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.*;
 import net.minecraft.registry.DynamicRegistryManager;
@@ -12,7 +17,9 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class MultitoolRecipe implements Recipe<SimpleInventory> {
 
@@ -33,11 +40,43 @@ public class MultitoolRecipe implements Recipe<SimpleInventory> {
             return false;
         }
 
-        return inputs.get(0).test(inventory.getStack(0));
+        for(int i = 0; i < inputs.size(); ++i) {
+            if(!inputs.get(i).test(inventory.getStack(i))) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     @Override
     public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
+        ItemStack crafted = result.copy();
+        NbtCompound nbt = crafted.getOrCreateNbt();
+
+        List<BasicMaterial> materials = fromIngredients(inventory);
+        NbtCompound newNbt = new Multitool.Materials(materials).toNbt(nbt);
+
+        crafted.setNbt(newNbt);
+        return crafted;
+    }
+
+    public List<BasicMaterial> fromIngredients(SimpleInventory inventory) {
+        List<BasicMaterial> result = new ArrayList<>();
+
+        for(int i = 0; i < inventory.size(); ++i) {
+            final var stack = inventory.getStack(i);
+            Optional<BasicMaterial> materialEntry = ModRegistries.MATERIAL.stream().filter(
+                    material -> material.getMaterialIngredient().test(stack)
+            ).findAny();
+
+            if(materialEntry.isEmpty()) {
+                continue;
+            }
+
+            result.add(materialEntry.get());
+        }
+
         return result;
     }
 

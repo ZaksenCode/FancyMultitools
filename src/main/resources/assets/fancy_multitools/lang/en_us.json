@@ -2,14 +2,20 @@
   "_#items": "~~~~~~~~~~ ITEMS ~~~~~~~~~",
 
   "item.fancy_multitools.multitool": "Multitool",
-  "item.fancy_multitools.multitool_head_part": "Multitool head part",
+  "item.multitool.description.materials": "§7Materials:",
 
-  "tag.item.fancy_multitools.multitool_part": "Multitool parts",
+  "tag.item.fancy_multitools.stone_material": "Stone material",
   "tag.item.fancy_multitools.multitool_material": "Multitool materials",
 
   "_#blocks": "~~~~~~~~~~ BLOCKS ~~~~~~~~~",
 
   "block.fancy_multitools.tool_creation_station": "Tool creation station",
+
+  "_#materials": "~~~~~~~~~~ MATERIALS ~~~~~~~~~",
+
+  "material.fancy_multitools.air": "Air",
+  "material.fancy_multitools.wood": "Wood",
+  "material.fancy_multitools.stone": "Stone",
 
   "_#screens": "~~~~~~~~~~ SCREENS ~~~~~~~~~",
 

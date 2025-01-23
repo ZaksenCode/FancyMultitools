@@ -7,7 +7,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 
 public class ModRegistryKeys {
-    public static final RegistryKey<Registry<BasicMaterial>> MATERIAL_KEY = of("materials");
+    public static final RegistryKey<Registry<BasicMaterial>> MATERIAL = of("materials");
 
     private static <T> RegistryKey<Registry<T>> of(String id) {
         return RegistryKey.ofRegistry(new Identifier(FancyMultitools.MOD_ID, id));

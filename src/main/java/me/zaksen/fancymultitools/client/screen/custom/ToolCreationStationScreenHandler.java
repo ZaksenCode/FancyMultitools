@@ -1,6 +1,8 @@
 package me.zaksen.fancymultitools.client.screen.custom;
 
 import me.zaksen.fancymultitools.block.custom.enity.ToolCreationStationEntity;
+import me.zaksen.fancymultitools.client.screen.custom.slot.HandledSlot;
+import me.zaksen.fancymultitools.client.screen.custom.slot.OutputHandledSlot;
 import me.zaksen.fancymultitools.screen.ModScreens;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,6 +13,8 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
+import java.util.function.Consumer;
+
 public class ToolCreationStationScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     public final ToolCreationStationEntity blockEntity;
@@ -19,23 +23,25 @@ public class ToolCreationStationScreenHandler extends ScreenHandler {
         this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()));
     }
 
-    public ToolCreationStationScreenHandler(int syncId, PlayerInventory inventory, BlockEntity blockEntity) {
+    public ToolCreationStationScreenHandler(int syncId, PlayerInventory inventory, BlockEntity be) {
         super(ModScreens.TOOL_CREATION_STATION_HANDLER, syncId);
-        checkSize((Inventory) blockEntity, 2);
-        this.inventory = (Inventory) blockEntity;
-        this.blockEntity = (ToolCreationStationEntity) blockEntity;
+        checkSize((Inventory) be, 6);
+        this.inventory = (Inventory) be;
+        this.blockEntity = (ToolCreationStationEntity) be;
         inventory.onOpen(inventory.player);
 
-        this.addSlot(new Slot(this.inventory, 0, 44, 28));
-        this.addSlot(new Slot(this.inventory, 1, 62, 28));
-        this.addSlot(new Slot(this.inventory, 2, 80, 28));
-        this.addSlot(new Slot(this.inventory, 3, 98, 28));
-        this.addSlot(new Slot(this.inventory, 4, 116, 28));
-        this.addSlot(new Slot(this.inventory, 5, 44, 46));
-        this.addSlot(new Slot(this.inventory, 6, 62, 46));
-        this.addSlot(new Slot(this.inventory, 7, 80, 46));
-        this.addSlot(new Slot(this.inventory, 8, 98, 46));
-        this.addSlot(new Slot(this.inventory, 9, 116, 46));
+        Consumer<Slot> consumer = slot -> blockEntity.tryPreviewItem();
+
+        this.addSlot(new HandledSlot(this.inventory, 0, 17, 18, consumer));
+        this.addSlot(new HandledSlot(this.inventory, 1, 35, 18, consumer));
+        this.addSlot(new HandledSlot(this.inventory, 2, 53, 18, consumer));
+        this.addSlot(new HandledSlot(this.inventory, 3, 35, 36, consumer));
+        this.addSlot(new HandledSlot(this.inventory, 4, 35, 54, consumer));
+
+        this.addSlot(new OutputHandledSlot(this.inventory, 5, 116, 36, slot -> {
+            blockEntity.craftItem();
+            blockEntity.tryPreviewItem();
+        }));
 
         addPlayerInventory(inventory);
         addPlayerHotbar(inventory);
