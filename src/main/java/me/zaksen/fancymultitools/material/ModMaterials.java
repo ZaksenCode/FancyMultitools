@@ -30,7 +30,7 @@ public class ModMaterials {
                     Text.translatable("material.fancy_multitools.wood"),
                     Ingredient.fromTag(ItemTags.PLANKS),
                     50,
-                    0.4f
+                    2.0f
             )
     );
 
@@ -41,7 +41,40 @@ public class ModMaterials {
                     Text.translatable("material.fancy_multitools.stone"),
                     Ingredient.fromTag(ModTags.STONE_MATERIAL),
                     100,
-                    0.6f
+                    4.0f
+            )
+    );
+
+    public static final BasicMaterial GOLD = registerMaterial(
+            "gold",
+            new Material(
+
+                    Text.translatable("material.fancy_multitools.gold"),
+                    Ingredient.fromTag(ModTags.GOLD_MATERIAL),
+                    80,
+                    12.0f
+            )
+    );
+
+    public static final BasicMaterial IRON = registerMaterial(
+            "iron",
+            new Material(
+
+                    Text.translatable("material.fancy_multitools.iron"),
+                    Ingredient.fromTag(ModTags.IRON_MATERIAL),
+                    256,
+                    6.0f
+            )
+    );
+
+    public static final BasicMaterial DIAMOND = registerMaterial(
+            "diamond",
+            new Material(
+
+                    Text.translatable("material.fancy_multitools.diamond"),
+                    Ingredient.fromTag(ModTags.DIAMOND_MATERIAL),
+                    512,
+                    8.0f
             )
     );
 

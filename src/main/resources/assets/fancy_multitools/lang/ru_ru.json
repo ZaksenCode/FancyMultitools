@@ -9,8 +9,14 @@
   "tooltip.fancy_multitools.mining_speed": "§7Скорость копания:§6 %s",
   "tooltip.fancy_multitools.materials": "§7Материалы:",
 
-  "tag.item.fancy_multitools.stone_material": "Материал из камня",
+  "tag.item.fancy_multitools.multitools": "Мульти-инструменты",
+
   "tag.item.fancy_multitools.multitool_material": "Материалы для мульти-инструментов",
+
+  "tag.item.fancy_multitools.stone_material": "Материал из камня",
+  "tag.item.fancy_multitools.gold_material": "Материал из золота",
+  "tag.item.fancy_multitools.iron_material": "Материал из железа",
+  "tag.item.fancy_multitools.diamond_material": "Материал из алмаза",
 
   "_#blocks": "~~~~~~~~~~ BLOCKS ~~~~~~~~~",
 
@@ -21,6 +27,9 @@
   "material.fancy_multitools.air": "Воздух",
   "material.fancy_multitools.wood": "Дерево",
   "material.fancy_multitools.stone": "Камень",
+  "material.fancy_multitools.gold": "Золото",
+  "material.fancy_multitools.iron": "Железо",
+  "material.fancy_multitools.diamond": "Алмаз",
 
   "_#screens": "~~~~~~~~~~ SCREENS ~~~~~~~~~",
 

@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "fancy_multitools:multitool"
+    "#fancy_multitools:multitools"
   ]
 }

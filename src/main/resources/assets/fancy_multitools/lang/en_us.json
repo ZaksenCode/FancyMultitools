@@ -10,8 +10,14 @@
   "tooltip.fancy_multitools.mining_speed": "§7Mining speed:§6 %s",
   "tooltip.fancy_multitools.materials": "§7Materials:",
 
-  "tag.item.fancy_multitools.stone_material": "Stone material",
+  "tag.item.fancy_multitools.multitools": "Multitools",
+
   "tag.item.fancy_multitools.multitool_material": "Multitool materials",
+
+  "tag.item.fancy_multitools.stone_material": "Stone material",
+  "tag.item.fancy_multitools.gold_material": "Gold material",
+  "tag.item.fancy_multitools.iron_material": "Iron material",
+  "tag.item.fancy_multitools.diamond_material": "Diamond material",
 
   "_#blocks": "~~~~~~~~~~ BLOCKS ~~~~~~~~~",
 
@@ -22,6 +28,9 @@
   "material.fancy_multitools.air": "Air",
   "material.fancy_multitools.wood": "Wood",
   "material.fancy_multitools.stone": "Stone",
+  "material.fancy_multitools.gold": "Gold",
+  "material.fancy_multitools.iron": "Iron",
+  "material.fancy_multitools.diamond": "Diamond",
 
   "_#screens": "~~~~~~~~~~ SCREENS ~~~~~~~~~",
 

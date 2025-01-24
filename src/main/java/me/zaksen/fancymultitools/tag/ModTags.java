@@ -15,4 +15,16 @@ public class ModTags {
     public static final TagKey<Item> STONE_MATERIAL = TagKey.of(RegistryKeys.ITEM, Identifier.of(
             FancyMultitools.MOD_ID, "stone_material"
     ));
+
+    public static final TagKey<Item> GOLD_MATERIAL = TagKey.of(RegistryKeys.ITEM, Identifier.of(
+            FancyMultitools.MOD_ID, "gold_material"
+    ));
+
+    public static final TagKey<Item> IRON_MATERIAL = TagKey.of(RegistryKeys.ITEM, Identifier.of(
+            FancyMultitools.MOD_ID, "iron_material"
+    ));
+
+    public static final TagKey<Item> DIAMOND_MATERIAL = TagKey.of(RegistryKeys.ITEM, Identifier.of(
+            FancyMultitools.MOD_ID, "diamond_material"
+    ));
 }

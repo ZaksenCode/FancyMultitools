@@ -2,12 +2,15 @@ package me.zaksen.fancymultitools.item.tool.custom;
 
 import me.zaksen.fancymultitools.api.material.BasicMaterial;
 import me.zaksen.fancymultitools.registry.ModRegistries;
+import me.zaksen.fancymultitools.tag.ModTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.MiningToolItem;
+import net.minecraft.item.ToolMaterials;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;

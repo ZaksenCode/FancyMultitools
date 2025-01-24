@@ -1,6 +1,9 @@
 {
   "values": [
     "#minecraft:planks",
-    "#fancy_multitools:stone_material"
+    "#fancy_multitools:stone_material",
+    "#fancy_multitools:gold_material",
+    "#fancy_multitools:iron_material",
+    "#fancy_multitools:diamond_material"
   ]
 }
