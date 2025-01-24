@@ -2,7 +2,13 @@
   "_#items": "~~~~~~~~~~ ITEMS ~~~~~~~~~",
 
   "item.fancy_multitools.multitool": "Multitool",
-  "item.multitool.description.materials": "§7Materials:",
+
+
+  "tooltip.fancy_multitools.shift_info": "§8Press [shift] to get more info",
+  "tooltip.fancy_multitools.void": "",
+  "tooltip.fancy_multitools.durability": "§7Durability:§6 %s",
+  "tooltip.fancy_multitools.mining_speed": "§7Mining speed:§6 %s",
+  "tooltip.fancy_multitools.materials": "§7Materials:",
 
   "tag.item.fancy_multitools.stone_material": "Stone material",
   "tag.item.fancy_multitools.multitool_material": "Multitool materials",

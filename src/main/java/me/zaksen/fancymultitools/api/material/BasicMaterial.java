@@ -8,4 +8,5 @@ public interface BasicMaterial {
     Text getDisplayName();
     Ingredient getMaterialIngredient();
     int getDurability();
+    float getSpeedModifier();
 }

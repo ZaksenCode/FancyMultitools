@@ -19,7 +19,8 @@ public class ModMaterials {
             new Material(
                     Text.translatable("material.fancy_multitools.air"),
                     Ingredient.ofItems(Items.AIR),
-                    0
+                    0,
+                    0.0f
             )
     );
 
@@ -28,7 +29,8 @@ public class ModMaterials {
             new Material(
                     Text.translatable("material.fancy_multitools.wood"),
                     Ingredient.fromTag(ItemTags.PLANKS),
-                    50
+                    50,
+                    0.4f
             )
     );
 
@@ -38,7 +40,8 @@ public class ModMaterials {
 
                     Text.translatable("material.fancy_multitools.stone"),
                     Ingredient.fromTag(ModTags.STONE_MATERIAL),
-                    100
+                    100,
+                    0.6f
             )
     );
 

@@ -2,7 +2,12 @@
   "_#items": "~~~~~~~~~~ ITEMS ~~~~~~~~~",
 
   "item.fancy_multitools.multitool": "Мульти-инструмент",
-  "item.multitool.description.materials": "§7Материалы:",
+
+  "tooltip.fancy_multitools.shift_info": "§8Нажмите [shift] для информации",
+  "tooltip.fancy_multitools.void": "",
+  "tooltip.fancy_multitools.durability": "§7Прочность:§6 %s",
+  "tooltip.fancy_multitools.mining_speed": "§7Скорость копания:§6 %s",
+  "tooltip.fancy_multitools.materials": "§7Материалы:",
 
   "tag.item.fancy_multitools.stone_material": "Материал из камня",
   "tag.item.fancy_multitools.multitool_material": "Материалы для мульти-инструментов",

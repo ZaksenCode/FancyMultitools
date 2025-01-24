@@ -1,10 +1,10 @@
 package me.zaksen.fancymultitools.item.tool.custom;
 
-import me.zaksen.fancymultitools.FancyMultitools;
 import me.zaksen.fancymultitools.api.material.BasicMaterial;
 import me.zaksen.fancymultitools.registry.ModRegistries;
+import net.minecraft.block.BlockState;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.client.item.TooltipData;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,14 +20,35 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
 public class Multitool extends Item {
+    private static final NumberFormat formatter = new DecimalFormat("#0.00");
 
     public Multitool(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public float getMiningSpeedMultiplier(ItemStack stack, @Nullable BlockState state) {
+        var materials = Materials.fromNbt(stack.getOrCreateNbt());
+
+        var totalModifier = 0.0f;
+
+        for(var material : materials.materials) {
+            totalModifier += material.getSpeedModifier();
+        }
+
+        return totalModifier / materials.materials.size();
+    }
+
+    @Override
+    public boolean isDamageable() {
+        return true;
     }
 
     @Override
@@ -37,11 +58,6 @@ public class Multitool extends Item {
         if(!world.isClient) {
             var materials = Materials.fromNbt(stack.getOrCreateNbt());
 
-            materials.materials.forEach(material -> {
-                user.sendMessage(material.getDisplayName());
-                user.sendMessage(Text.of(material.getDurability() + ""));
-            });
-            user.sendMessage(Text.of("Materials: " + materials.materials.size()));
         }
 
         return TypedActionResult.pass(stack);
@@ -51,10 +67,20 @@ public class Multitool extends Item {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         var materials = Materials.fromNbt(stack.getOrCreateNbt());
 
-        tooltip.add(Text.translatable("item.multitool.description.materials"));
-        materials.materials.forEach(material -> tooltip.add(
-                MutableText.of(Text.of("§7- ").getContent()).append(material.getDisplayName()))
-        );
+        tooltip.add(Text.translatable("tooltip.fancy_multitools.void"));
+        tooltip.add(Text.translatable("tooltip.fancy_multitools.durability", (materials.getTotalDurability() - stack.getNbt().getInt("Damage")) + "/" + materials.getTotalDurability()));
+
+        if(Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("tooltip.fancy_multitools.mining_speed", formatter.format(getMiningSpeedMultiplier(stack, null))));
+
+            tooltip.add(Text.translatable("tooltip.fancy_multitools.void"));
+            tooltip.add(Text.translatable("tooltip.fancy_multitools.materials"));
+            materials.materials.forEach(material -> tooltip.add(
+                    MutableText.of(Text.of("§7- ").getContent()).append(material.getDisplayName()))
+            );
+        } else {
+            tooltip.add(Text.translatable("tooltip.fancy_multitools.shift_info"));
+        }
 
         super.appendTooltip(stack, world, tooltip, context);
     }

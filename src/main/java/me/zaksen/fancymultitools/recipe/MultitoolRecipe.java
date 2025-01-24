@@ -4,8 +4,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import me.zaksen.fancymultitools.api.material.BasicMaterial;
 import me.zaksen.fancymultitools.item.tool.custom.Multitool;
-import me.zaksen.fancymultitools.material.ModMaterials;
 import me.zaksen.fancymultitools.registry.ModRegistries;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -55,7 +55,8 @@ public class MultitoolRecipe implements Recipe<SimpleInventory> {
         NbtCompound nbt = crafted.getOrCreateNbt();
 
         List<BasicMaterial> materials = fromIngredients(inventory);
-        NbtCompound newNbt = new Multitool.Materials(materials).toNbt(nbt);
+        Multitool.Materials materialsObject = new Multitool.Materials(materials);
+        NbtCompound newNbt = materialsObject.toNbt(nbt);
 
         crafted.setNbt(newNbt);
         return crafted;
