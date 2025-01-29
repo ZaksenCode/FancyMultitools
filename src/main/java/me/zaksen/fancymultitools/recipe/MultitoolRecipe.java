@@ -58,6 +58,10 @@ public class MultitoolRecipe implements Recipe<SimpleInventory> {
         Multitool.Materials materialsObject = new Multitool.Materials(materials);
         NbtCompound newNbt = materialsObject.toNbt(nbt);
 
+        if(crafted.getItem() instanceof Multitool multitool) {
+            multitool.setDamageValue(crafted, materialsObject.getTotalDurability());
+        }
+
         crafted.setNbt(newNbt);
         return crafted;
     }
